@@ -1,0 +1,145 @@
+<html>
+<head>
+
+  <title>Building Blocks</title>
+
+  	<%= csrf_meta_tags %>
+        <meta charset="utf-8">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <link href="/assets/flexslider.min.css" rel="stylesheet" type="text/css" media="all"/>
+        <link href="/assets/line-icons.min.css" rel="stylesheet" type="text/css" media="all"/>
+        <link href="/assets/elegant-icons.min.css" rel="stylesheet" type="text/css" media="all"/>
+        <link href="/assets/lightbox.min.css" rel="stylesheet" type="text/css" media="all"/>
+        <link href="/assets/bootstrap.min.css" rel="stylesheet" type="text/css" media="all"/>
+        <link href="/assets/theme-aspirin.css" rel="stylesheet" type="text/css" media="all"/>
+        <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,400,300,600,700%7CRaleway:700' rel='stylesheet' type='text/css'>
+        <script src="/assets/modernizr-2.6.2-respond-1.1.0.min.js"></script>
+        <script src="/assets/ckeditor/ckeditor.js"></script>
+
+
+</head>
+
+
+
+<body>
+	<div class="nav-container">
+		<nav class="top-bar overlay-bar">
+			<div class="container">
+			<div class="row utility-menu">
+						<div class="col-sm-12">
+							<div class="utility-inner clearfix">
+								<div class="pull-right">
+									<% if user_signed_in? %>
+									  <li>
+									  <%= link_to "Logout", destroy_user_session_path, method: :delete, class: "btn btn-primary login-button btn-xs" %>        
+									  </li>
+									<% else %>
+									  <li>
+									  <%= link_to "Log In", new_user_session_path, class: "btn btn-primary btn-filled btn-xs"  %>  
+									  </li>
+									<% end %>
+								</div>
+							</div>
+						</div>
+					</div><!--end of row-->		
+				<div class="row nav-menu">
+					<div class="col-sm-3 col-md-2 columns">
+						<%= link_to root_path do %>
+							<img class="logo logo-dark" src="/assets/logo-dark.png">
+							<img class="logo logo-light" src="/assets/logo-light.png">		
+						<%end%>
+
+							
+					</div>
+					
+					<div class="col-sm-9 col-md-10 columns">
+						<ul class="menu">
+							<li><%= link_to "Home", root_path %>									
+							</li>
+
+							<li><%= link_to "About Us", about_path %>
+							</li>
+
+							<li><%= link_to "Our Work", posts_path %>
+							</li>
+
+							<li><%= link_to "Support Us", store_path %>
+							</li>
+
+							<li><%= link_to "Contact", '/contacts/new' %>
+							</li>
+
+						</ul>
+
+						
+
+						<ul class="social-icons text-right">
+							<li>
+								<a href="#">
+									<i class="icon social_twitter"></i>
+								</a>
+							</li>
+							
+							<li>
+								<a href="#">
+									<i class="icon social_instagram"></i>
+								</a>
+							</li>
+							
+							<li>
+								<a href="#">
+									<i class="icon social_facebook"></i>
+								</a>
+							</li>
+						</ul>
+					</div>
+					
+				</div><!--end of row-->
+			</div>
+		</nav>
+</div>
+
+<div class="main-container">
+	<div class="container">
+		<div class="row">	
+			<div class="col-md-10 col-md-offset-1 col-sm-10 col-sm-offset-1 text-center">
+				<div class="col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2 text-center">
+					<span class="lead alt-font">
+						<% if notice %>
+							<%= notice %>
+						<% elsif %>
+							<%= alert %>
+						<% end %>
+					</span>
+				</div>
+			</div>
+		</div><!--end of row-->
+	</div>
+</div>
+
+
+
+<%= yield %>
+
+
+
+
+
+	<script src="/assets/jquery.min.js"></script>
+    <script src="/assets/jquery.plugin.min.js"></script>
+    <script src="/assets/bootstrap.min.js"></script>
+    <script src="/assets/jquery.flexslider-min.js"></script>
+    <script src="/assets/smooth-scroll.min.js"></script>
+    <script src="/assets/skrollr.min.js"></script>
+    <script src="/assets/spectragram.min.js"></script>
+    <script src="/assets/scrollReveal.min.js"></script>
+    <script src="/assets/isotope.min.js"></script>
+    <script src="/assets/twitterFetcher_v10_min.js"></script>
+    <script src="/assets/lightbox.min.js"></script>
+    <script src="/assets/jquery.countdown.min.js"></script>
+    <script src="/assets/scripts.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,89 @@
+    <body>
+    	<div class="loader">
+    		<div class="spinner">
+			  <div class="double-bounce1"></div>
+			  <div class="double-bounce2"></div>
+			</div>
+    	</div>
+
+		<div class="main-container">
+			
+			<section class="map-overlay">
+				<div class="map-holder">
+					<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d25064.88990527948!2d-85.77198014560548!3d38.253726049187534!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x886972bb0fde1297%3A0xfa0067294ea29000!2sDowntown%2C+Louisville%2C+KY!5e0!3m2!1sen!2sus!4v1461176409014"></iframe>
+				</div>
+
+				
+				<div class="container">
+					<div class="row">	
+						<div class="col-md-10 col-md-offset-1 col-sm-10 col-sm-offset-1 text-center">
+						<div class="col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2 text-center">
+							<span class="text-white alt-font">We are accepting work</span>
+							<h1 class="text-white"><strong>We're located in Louisville, KY and we want to build communities.</strong></h1>
+						</div>
+						</div>
+					</div><!--end of row-->
+					<div class="row">
+						<div class="col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2 text-center">
+							<h1 class="text-white">Drop us a line<br />to talk about your project</h1>
+
+						</div>
+					</div><!--end of row-->
+					
+					<div class="row">
+						<div class="col-md-8 col-md-offset-2 col-sm-6 col-sm-offset-3">
+							<div class="form-wrapper clearfix">
+								<div class="form-contact email-form">
+									<div class="inputs-wrapper">
+										<%= form_for @contact do |f| %>
+											
+											<%= f.text_field :name, required: true, placeholder: "Your Name", class: 'text-white form-name validate-required' %>
+
+											<br>
+
+											
+											<%= f.text_field :email, required: true, placeholder: "Your Email", class: 'text-white form-email validate-required validate-email' %>
+
+											<br>
+											
+											
+											<%= f.text_area :message, as: :text, placeholder: "Your Message", class: 'text-white form-message validate-required' %>
+										
+
+											<div class="hidden">
+												<%= f.text_field :nickname, hint: 'Leave this field blank' %>
+											</div>
+									</div>
+											<%= f.submit 'Send Message', class: "btn btn-primary btn-filled" %>	
+									<% end %>
+									<div class="form-success">
+										<span class="text-white">Message sent - Thanks for your enquiry</span>
+									</div>
+									<div class="form-error">
+										<span class="text-white">Please complete all fields correctly</span>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div><!--end of row-->
+				</div><!--end of container-->
+			</section>
+
+			
+		</div>
+		<div class="footer-container">
+		
+			<footer class="short bg-secondary-1">
+				<div class="container">
+					<div class="row">
+						<div class="col-sm-10">
+							<span class="sub">© Copyright 2016 Building Blocks</span>
+
+						</div>
+
+					</div><!--end of row-->
+				</div><!--end of container-->
+			</footer>
+		</div>
+
+    </body>

@@ -1,0 +1,94 @@
+
+<body>
+    <div class="loader">
+    	<div class="spinner">
+			<div class="double-bounce1"></div>
+			<div class="double-bounce2"></div>
+		</div>
+    </div>
+
+	<div class="mobile-toggle">
+		<i class="icon icon_menu"></i>
+	</div>
+
+		<div class="main-container">
+			<section class="no-pad-bottom projects-gallery">
+				<div class="background-image-holder overlay">
+					<img class="background-image" alt="Poster Image For Mobiles" src="/assets/shine5-min.jpg">
+				</div>
+				<div class="container">
+				<br>
+				<br>
+				<br>
+				<br>
+				<br>
+					<div class="row">
+						<div class="col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2 text-center">
+							<h1 class="text-white">Check out some of our<br>latest and greatest work!!!</h1>
+							<p class="text-white">
+								Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta. 
+							</p>
+							<% if current_user && current_user.admin? %>
+							<%= link_to "New Post", new_post_path, class: "btn btn-primary btn-filled" %>
+							<% end %>
+						</div>
+					</div><!--end of row-->
+					
+				</div><!--end of container-->
+
+				<br>
+				<br>
+
+<% @posts.each do |post| %>	
+	<div class="main-container">
+		<section class="blog-image-snippet">
+			
+				<div class="background-image-holder parallax-background">
+					<%= image_tag post.image.url, class: "background-image" %>
+				</div>
+				
+				<div class="container">
+					<div class="row">
+						<div class="col-sm-12">
+								<h1 class="text-white"><%= post.title %></h1>
+								<p class="text-white">
+									
+								</p>
+								<span class="text-white alt-font"><i class="icon icon_calendar"></i><%= post.created_at.strftime("%A, %b, %d") %>
+									
+								</span><br><span class="text-white alt-font link-text"><%= link_to 'See More', post %></span>
+							</a>
+						</div>	
+					</div><!--end of row-->
+				</div><!--end of container-->
+			</section>
+			
+		</div>
+<% end %>
+
+<div class="main-container">
+<%= will_paginate @posts, class: "text-white text-center" %>
+</div>
+
+		<div class="footer-container">
+			<footer class="bg-primary short-2">
+				<div class="container">
+					<div class="row">
+						<div class="col-sm-12">
+							<span class="text-white">© 2016 Slugger City Sign Co.</span>
+							<span class="text-white"><a href="#">hello@buildingblocks.com</a></span>
+							<span class="text-white">+555 555 5555</span>
+							<span class="text-white">Louisville KY, 40206</span>
+						</div>
+					</div><!--end for row-->
+				</div><!--end of container-->
+				
+				<div class="contact-action">
+					<div class="align-vertical">
+						<i class="icon text-white icon_mail"></i>
+						<a href="pages/contact.html" class="text-white"><span class="text-white">Get in touch with us <i class="icon arrow_right"></i></span></a>
+					</div>
+				</div>
+			</footer>
+		</div>
+	</body>

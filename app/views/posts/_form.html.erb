@@ -1,0 +1,32 @@
+<% if @post.errors.any? %>
+  <ul>
+    <%= @post.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+    <% end %>
+  </ul>
+<% end %>
+<%= form_for @post, :html => {:multipart => true} do |f| %>
+  <div>
+    <%= f.label :title %>
+  </div>
+  <div>
+    <%= f.text_field :title %>
+  </div>
+  
+<br>
+  <div>
+    Background Image: <%= f.file_field :image  %>
+  </div>
+<br>
+
+  <div>Copy the following text and replace your image URL after uploading it, remove the spaces before each "<": <code>< p class="text-center">< a data-lightbox="true" href="URL HERE">< img class="background-image lightbox-image" src="URL HERE" />< /a>< /p></code>
+  </div>
+  <div>
+    <%= f.cktext_area :content %>
+  </div>
+ <br>
+  <div>
+    <%= f.submit %>
+  </div>
+<% end %>
+
